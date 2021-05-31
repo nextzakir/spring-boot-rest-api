@@ -1,4 +1,4 @@
-package com.nextzakir.springbootrestapi.helper;
+package com.nextzakir.restapi.helper;
 
 public enum EntityState {
     Completed, Incomplete, Deleted

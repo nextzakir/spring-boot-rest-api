@@ -1,4 +1,4 @@
-package com.nextzakir.springbootrestapi;
+package com.nextzakir.restapi;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

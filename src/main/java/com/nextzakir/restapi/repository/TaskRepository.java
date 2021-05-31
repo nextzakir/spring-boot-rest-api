@@ -1,6 +1,6 @@
-package com.nextzakir.springbootrestapi.repository;
+package com.nextzakir.restapi.repository;
 
-import com.nextzakir.springbootrestapi.entity.Task;
+import com.nextzakir.restapi.entity.Task;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;

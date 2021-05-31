@@ -1,4 +1,4 @@
-package com.nextzakir.springbootrestapi;
+package com.nextzakir.restapi;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

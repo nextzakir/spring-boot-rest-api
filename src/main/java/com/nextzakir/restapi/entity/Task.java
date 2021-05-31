@@ -1,4 +1,4 @@
-package com.nextzakir.springbootrestapi.entity;
+package com.nextzakir.restapi.entity;
 
 import org.springframework.lang.Nullable;
 

@@ -1,4 +1,4 @@
-package com.nextzakir.springbootrestapi.helper;
+package com.nextzakir.restapi.helper;
 
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
