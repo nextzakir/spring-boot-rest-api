@@ -1,7 +1,7 @@
-package com.nextzakir.restapi.service;
+package com.nextzakir.springbootrestapi.service;
 
-import com.nextzakir.restapi.entity.Task;
-import com.nextzakir.restapi.repository.TaskRepository;
+import com.nextzakir.springbootrestapi.entity.Task;
+import com.nextzakir.springbootrestapi.repository.TaskRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;

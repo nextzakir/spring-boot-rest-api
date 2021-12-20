@@ -1,11 +1,11 @@
-package com.nextzakir.restapi.controller;
+package com.nextzakir.springbootrestapi.controller;
 
-import com.nextzakir.restapi.dto.TaskDTO;
-import com.nextzakir.restapi.entity.Task;
-import com.nextzakir.restapi.exception.*;
-import com.nextzakir.restapi.helper.EntityState;
-import com.nextzakir.restapi.helper.Helper;
-import com.nextzakir.restapi.service.TaskService;
+import com.nextzakir.springbootrestapi.dto.TaskDTO;
+import com.nextzakir.springbootrestapi.entity.Task;
+import com.nextzakir.springbootrestapi.exception.*;
+import com.nextzakir.springbootrestapi.helper.EntityState;
+import com.nextzakir.springbootrestapi.helper.Helper;
+import com.nextzakir.springbootrestapi.service.TaskService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;

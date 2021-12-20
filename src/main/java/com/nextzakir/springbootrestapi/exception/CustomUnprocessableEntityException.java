@@ -1,4 +1,4 @@
-package com.nextzakir.restapi.exception;
+package com.nextzakir.springbootrestapi.exception;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;

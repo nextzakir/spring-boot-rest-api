@@ -1,4 +1,4 @@
-package com.nextzakir.restapi.dto;
+package com.nextzakir.springbootrestapi.dto;
 
 import java.util.Objects;
 
