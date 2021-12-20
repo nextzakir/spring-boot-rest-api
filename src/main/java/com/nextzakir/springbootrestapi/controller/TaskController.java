@@ -48,22 +48,22 @@ public class TaskController {
                                 return new ResponseEntity<>(task, HttpStatus.CREATED);
                             } catch (Exception e) {
                                 System.err.println(e.getMessage());
-                                throw new CustomInternalServerErrorException("Something went wrong on the server!");
+                                throw new InternalServerErrorException("Something went wrong on the server!");
                             }
                         } else {
-                            throw new CustomConflictException("A task with this title already exists!");
+                            throw new ConflictException("A task with this title already exists!");
                         }
                     } else {
-                        throw new CustomUnprocessableEntityException("Task description must not be more than 150 characters!");
+                        throw new UnprocessableEntityException("Task description must not be more than 150 characters!");
                     }
                 } else {
-                    throw new CustomUnprocessableEntityException("Task description is required!");
+                    throw new UnprocessableEntityException("Task description is required!");
                 }
             } else {
-                throw new CustomUnprocessableEntityException("Task title must not be more than 50 characters!");
+                throw new UnprocessableEntityException("Task title must not be more than 50 characters!");
             }
         } else {
-            throw new CustomUnprocessableEntityException("Task title is required!");
+            throw new UnprocessableEntityException("Task title is required!");
         }
 
     }
@@ -83,7 +83,7 @@ public class TaskController {
                             theTask.setTaskTitle(taskDTO.getTaskTitle());
                             theTask.setTaskSlug(Helper.toSlug(taskDTO.getTaskTitle()));
                         } else {
-                            throw new CustomUnprocessableEntityException("Task title must not be more than 50 characters!");
+                            throw new UnprocessableEntityException("Task title must not be more than 50 characters!");
                         }
                     }
 
@@ -91,7 +91,7 @@ public class TaskController {
                         if (taskDTO.getTaskDescription().length() <= 150) {
                             theTask.setTaskDescription(taskDTO.getTaskDescription());
                         } else {
-                            throw new CustomUnprocessableEntityException("Task description must not be more than 150 characters!");
+                            throw new UnprocessableEntityException("Task description must not be more than 150 characters!");
                         }
                     }
 
@@ -101,7 +101,7 @@ public class TaskController {
                                 taskDTO.getTaskState().equals(EntityState.Deleted.toString())) {
                             theTask.setTaskState(taskDTO.getTaskState());
                         } else {
-                            throw new CustomUnprocessableEntityException("Only Completed, Incomplete or Deleted is allowed as value for taskState!");
+                            throw new UnprocessableEntityException("Only Completed, Incomplete or Deleted is allowed as value for taskState!");
                         }
                     }
 
@@ -112,16 +112,16 @@ public class TaskController {
                         return new ResponseEntity<>(task, HttpStatus.ACCEPTED);
                     } catch (Exception e) {
                         System.err.println(e.getMessage());
-                        throw new CustomInternalServerErrorException("Something went wrong on the server!");
+                        throw new InternalServerErrorException("Something went wrong on the server!");
                     }
                 } else {
-                    throw new CustomNotFoundException("No task with this taskRdbmsId is found!");
+                    throw new NotFoundException("No task with this taskRdbmsId is found!");
                 }
             } else {
-                throw new CustomBadRequestException("No field present to update!");
+                throw new BadRequestException("No field present to update!");
             }
         } else {
-            throw new CustomBadRequestException("Please provide a taskRdbmsId with the request!");
+            throw new BadRequestException("Please provide a taskRdbmsId with the request!");
         }
 
     }
@@ -141,16 +141,16 @@ public class TaskController {
                         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
                     } catch (Exception e) {
                         System.err.println(e.getMessage());
-                        throw new CustomInternalServerErrorException("Something went wrong on the server!");
+                        throw new InternalServerErrorException("Something went wrong on the server!");
                     }
                 } else {
-                    throw new CustomBadRequestException("This task can not be deleted permanently!");
+                    throw new BadRequestException("This task can not be deleted permanently!");
                 }
             } else {
-                throw new CustomNotFoundException("No task with this taskRdbmsId is found!");
+                throw new NotFoundException("No task with this taskRdbmsId is found!");
             }
         } else {
-            throw new CustomBadRequestException("Please provide a taskRdbmsId with the request!");
+            throw new BadRequestException("Please provide a taskRdbmsId with the request!");
         }
 
     }
@@ -164,10 +164,10 @@ public class TaskController {
             if (optionalTask.isPresent()) {
                 return new ResponseEntity<>(optionalTask.get(), HttpStatus.OK);
             } else {
-                throw new CustomNotFoundException("No task with this taskRdbmsId is found!");
+                throw new NotFoundException("No task with this taskRdbmsId is found!");
             }
         } else {
-            throw new CustomBadRequestException("Please provide a taskRdbmsId with the request!");
+            throw new BadRequestException("Please provide a taskRdbmsId with the request!");
         }
 
     }

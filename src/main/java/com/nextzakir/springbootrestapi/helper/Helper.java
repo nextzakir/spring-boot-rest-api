@@ -179,18 +179,18 @@ public class Helper {
 //            if (clientResponse.statusCode().is4xxClientError()) {
 //                try {
 //                    CustomErrorHandler errorHandler = new ObjectMapper().readValue(message, CustomErrorHandler.class);
-//                    throw new CustomBadRequestException(errorHandler.getMessage());
+//                    throw new BadRequestException(errorHandler.getMessage());
 //                } catch (JsonProcessingException e) {
 //                    System.out.println("Error in parsing String to JSON!");
-//                    throw new CustomInternalServerErrorException("Something weird happened on the server!");
+//                    throw new InternalServerErrorException("Something weird happened on the server!");
 //                }
 //            } else {
 //                try {
 //                    CustomErrorHandler errorHandler = new ObjectMapper().readValue(message, CustomErrorHandler.class);
-//                    throw new CustomInternalServerErrorException(errorHandler.getMessage());
+//                    throw new InternalServerErrorException(errorHandler.getMessage());
 //                } catch (JsonProcessingException e) {
 //                    System.out.println("Error in parsing String to JSON!");
-//                    throw new CustomInternalServerErrorException("Something weird happened on the server!");
+//                    throw new InternalServerErrorException("Something weird happened on the server!");
 //                }
 //            }
 //        });
