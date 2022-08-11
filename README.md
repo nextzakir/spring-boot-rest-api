@@ -30,5 +30,5 @@ cd ./spring-boot-rest-api
 
 ## Notes
 
-1. After cloning the repository set up the sql database found in the root folder and adjust ```application.properties``` details found in ```./src/main/resources```.
+1. After cloning the repository set up the sql database found in the ```./src/main/resources``` folder and adjust ```application.properties```  connection values accordingly.
 2. After running the application it will be available on <http://localhost:8080>.

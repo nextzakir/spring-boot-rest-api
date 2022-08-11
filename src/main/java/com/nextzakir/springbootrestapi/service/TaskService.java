@@ -1,7 +1,8 @@
 package com.nextzakir.springbootrestapi.service;
 
+import com.nextzakir.springbootrestapi.dto.TaskDTO;
 import com.nextzakir.springbootrestapi.entity.Task;
-import org.springframework.data.domain.Page;
+import com.nextzakir.springbootrestapi.helper.Response;
 import org.springframework.data.domain.Pageable;
 
 import java.util.Optional;
@@ -9,17 +10,15 @@ import java.util.Optional;
 public interface TaskService {
 
     void saveTask(Task task);
-    Task saveAndReturnTask(Task task);
 
-    Optional<Task> findTaskByTaskRdbmsId(Long taskRdbmsId);
-    Optional<Task> findTaskByTaskTitle(String taskTitle);
-    Optional<Task> findTaskByTaskSlug(String taskSlug);
-    Page<Task> findAllTasks(Pageable pageable);
-
-    Boolean taskTitleExists(String taskTitle);
-
-    Long countTasks();
+    Task saveAndReturnTask(TaskDTO taskDTO);
 
     void deleteTaskByTaskRdbmsId(Long taskRdbmsId);
+
+    Optional<Task> findTaskByTaskRdbmsId(Long taskRdbmsId);
+
+    Response findAllTasks(Pageable pageable);
+
+    Boolean taskTitleExists(String taskTitle);
 
 }
